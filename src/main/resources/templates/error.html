@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script th:src="@{~/js/site.js}"></script>
+
+    <title>Crud - Thymeleaf</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav>
+            <div class="nav-wrapper blue darken-4 white-text">
+                <div class="container">
+                    <a th:href="@{~/}" class="brand-logo">Crud</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col s12">
+
+                    <h4>Ops, ocorreu um erro !</h4>
+
+                    <br />
+
+                    <p>Caminho: <strong><span th:text="${url}"></span></strong></p>
+
+                    <br />
+
+                    <p>Mensagem: <strong><span th:text="${message}"></span></strong></p>
+
+                    <br />
+
+                    <p class="red-text">* Se o erro persistir entre em contato com o administrador</p>
+
+                    <br />
+
+                    <a th:href="@{~/}" class="btn waves-effect waves-light green darken-3"><i
+                            class="material-icons left">keyboard_backspace</i>Voltar</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <br />
+
+    <footer>
+
+        <div class="container">
+
+            <div class="divider"></div>
+
+            <h5>Paulo Zier - 2021</h5>
+            <p>paulozier42@gmail.com</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
