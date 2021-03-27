@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head xmlns:th="http://www.thymeleaf.org">
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script th:src="@{~/js/site.js}"></script>
+
+	<title>Crud - Thymeleaf</title>
+</head>
+
+<body>
+
+	<header>
+
+		<nav>
+			<div class="nav-wrapper blue darken-4 white-text">
+				<div class="container">
+					<a href="" class="brand-logo">Crud</a>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<br />
+
+	<section>
+
+		<div class="container">
+
+			<div class="row">
+
+				<div class="col s12">
+
+					<div class="card-panel">
+
+						<div class="card-title">
+
+							<div class="right-align">
+
+								<a th:href="@{~/}" class="btn waves-effect waves-light green darken-4"><i
+										class="material-icons left">keyboard_backspace</i>Voltar</a>
+
+							</div>
+
+							<h5>Cadastro de Cliente</h5>
+
+						</div>
+
+						<div class="card-content">
+
+							<form action="#" th:action="@{/cliente}" th:object="${cliente}" method="post">
+
+								<div class="row">
+
+									<input type="hidden" id="id" name="id" th:field="*{id}" />
+
+									<div class="input-field col s12">
+
+										<label for="nome">Nome</label>
+										<input type="text" id="nome" name="nome" th:field="*{nome}" class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('nome')}"
+											th:errors="*{nome}"></span>
+
+									</div>
+
+									<div class="input-field col m4 s12">
+
+										<label for="fone">Fone</label>
+										<input type="text" id="fone" name="fone" th:field="*{fone}" class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('fone')}"
+											th:errors="*{fone}"></span>
+
+									</div>
+
+									<div class="input-field col m8 s12">
+
+										<label for="email">Email</label>
+										<input type="text" id="email" name="email" th:field="*{email}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('email')}"
+											th:errors="*{email}"></span>
+
+									</div>
+
+									<div class="input-field col m4 s12">
+
+										<label for="cep">Cep</label>
+										<input type="text" id="cep" name="cep" th:field="*{cep}" class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('cep')}"
+											th:errors="*{cep}"></span>
+
+									</div>
+
+									<div class="input-field col m8 s12">
+
+										<label for="endereco">Endereço</label>
+										<input type="text" id="endereco" name="endereco" th:field="*{endereco}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('endereco')}"
+											th:errors="*{endereco}"></span>
+
+									</div>
+
+									<div class="input-field col m3 s12">
+
+										<label for="numero">Número</label>
+										<input type="text" id="numero" name="numero" th:field="*{numero}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('numero')}"
+											th:errors="*{numero}"></span>
+
+									</div>
+
+									<div class="input-field col m9 s12">
+
+										<label for="bairro">Bairro</label>
+										<input type="text" id="bairro" name="bairro" th:field="*{bairro}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('bairro')}"
+											th:errors="*{bairro}"></span>
+
+									</div>
+
+									<div class="input-field col s12">
+
+										<label for="cidade">Cidade</label>
+										<input type="text" id="cidade" name="cidade" th:field="*{cidade}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('cidade')}"
+											th:errors="*{cidade}"></span>
+
+									</div>
+
+									<div class="input-field col s12">
+
+										<label for="estado">Estado</label>
+										<input type="text" id="estado" name="estado" th:field="*{estado}"
+											class="validate" />
+										<span class="red-text" th:if="${#fields.hasErrors('estado')}"
+											th:errors="*{estado}"></span>
+
+									</div>
+
+									<div class="col s12 right-align">
+
+										<a th:href="@{/cliente}" class="btn waves-effect waves-light green darken-3"><i
+												class="material-icons left">refresh</i>Limpar</a>
+										<button type="submit" class="btn waves-effect waves-light blue darken-3"><i
+												class="material-icons left">check</i>Salvar</button>
+
+									</div>
+
+								</div>
+
+							</form>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<div class="container">
+
+			<div class="divider"></div>
+
+			<h5>Paulo Zier - 2021</h5>
+			<p>paulozier42@gmail.com</p>
+
+		</div>
+
+	</footer>
+
+	<script th:if="${success != null}" th:inline="javascript">
+		/*<![CDATA[*/
+		var success = /*[[${success}]]*/ '';
+		M.toast({ html: success, classes: 'rounded green' });
+		/*]]>*/
+	</script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			adicionarEventosCampoFone('fone');
+
+			adicionarEventosCampoCep('cep');
+
+			$('#cep').blur(function () {
+
+				buscarEndereco('cep', 'endereco', 'bairro', 'cidade', 'estado');
+			});
+
+		});
+
+	</script>
+
+</body>
+
+</html>
